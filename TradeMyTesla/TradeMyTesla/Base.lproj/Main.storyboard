@@ -41,6 +41,9 @@
                                 <state key="normal" title="PROCEED">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Si4-1y-G7a" kind="show" identifier="displayMainUI" id="cjB-xw-5Ub"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="TeslaRed"/>
@@ -87,6 +90,9 @@
                                             <segment title="Model S"/>
                                             <segment title="Model X"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="calculateValue:" destination="Si4-1y-G7a" eventType="valueChanged" id="Zh0-jd-G2E"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREMIUM UPGRADES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXY-vm-d74" userLabel="UpgradesLabel">
                                         <rect key="frame" x="0.0" y="58.333333333333336" width="335" height="20.333333333333336"/>
@@ -100,6 +106,9 @@
                                             <segment title="Not Installed"/>
                                             <segment title="Installed"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="calculateValue:" destination="Si4-1y-G7a" eventType="valueChanged" id="aVj-96-ytz"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MILEAGE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pb-gF-l7r" userLabel="MileageLabel">
                                         <rect key="frame" x="0.0" y="116.66666666666666" width="335" height="20.333333333333343"/>
@@ -109,6 +118,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10000" minValue="0.0" maxValue="200000" translatesAutoresizingMaskIntoConstraints="NO" id="iVu-n3-nsI" userLabel="MileageSlider">
                                         <rect key="frame" x="-2" y="142" width="339" height="31"/>
+                                        <connections>
+                                            <action selector="calculateValue:" destination="Si4-1y-G7a" eventType="valueChanged" id="04a-pp-iTd"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONDITION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gk-qP-8kd" userLabel="ConditionLabel">
                                         <rect key="frame" x="0.0" y="177" width="335" height="20.333333333333343"/>
@@ -124,6 +136,9 @@
                                             <segment title="Good"/>
                                             <segment title="Excellent"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="calculateValue:" destination="Si4-1y-G7a" eventType="valueChanged" id="SAa-Vr-FcZ"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRADE YOUR TESLA FOR..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHI-vu-nom" userLabel="TradeLabel">
                                         <rect key="frame" x="0.0" y="235.33333333333331" width="335" height="20.333333333333343"/>
@@ -149,6 +164,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EVH-9B-WVz"/>
                     </view>
+                    <connections>
+                        <outlet property="condition" destination="lPT-JY-qfb" id="p9u-8o-CZh"/>
+                        <outlet property="mileage" destination="iVu-n3-nsI" id="a4H-7E-a1K"/>
+                        <outlet property="mileageLabel" destination="9pb-gF-l7r" id="NtJ-tw-eyd"/>
+                        <outlet property="model" destination="r2e-jo-8Il" id="UFD-iv-ndk"/>
+                        <outlet property="stackView" destination="VXQ-8l-ahf" id="hK6-lM-COx"/>
+                        <outlet property="upgrades" destination="R8M-ll-EfL" id="aeq-JO-c50"/>
+                        <outlet property="valuation" destination="IkP-bY-RE9" id="L0j-Wq-Yo5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06q-5t-Xgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

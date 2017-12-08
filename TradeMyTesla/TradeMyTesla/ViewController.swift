@@ -9,17 +9,45 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let cars = Cars()
+    let formatter = NumberFormatter()
+    
+    // MARK: UI variables
+    @IBOutlet weak var stackView: UIStackView!
+    
+    @IBOutlet weak var model: UISegmentedControl!
+    @IBOutlet weak var upgrades: UISegmentedControl!
+    @IBOutlet weak var condition: UISegmentedControl!
+    
+    @IBOutlet weak var mileageLabel: UILabel!
+    @IBOutlet weak var mileage: UISlider!
+    
+    @IBOutlet weak var valuation: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        setFormatterProperties()
+        setStackSpacing()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func calculateValue(_ sender: Any) {
+        let formattedMileage = formatter.string(for: mileage.value) ?? "0"
+        mileageLabel.text = "MILEAGE (\(formattedMileage) miles)"
+        
+        
     }
-
-
+    
+    // MARK: Helper methods
+    func setFormatterProperties() {
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 0
+    }
+    
+    func setStackSpacing() {
+        stackView.setCustomSpacing(30, after: model)
+        stackView.setCustomSpacing(30, after: upgrades)
+        stackView.setCustomSpacing(30, after: mileage)
+        stackView.setCustomSpacing(60, after: condition)
+    }
 }
-
