@@ -8,6 +8,7 @@ The goal of the project is to demonstrate CoreML, the included data is fictional
 
 Model: 0 - Model 3, 1 - Model S, 2 - Model X<br>
 Premium: 1 - has premium upgrade, 0 - no upgrades<br>
+Battery: 1 - 100kwh, 0 - 75 kwh<br>
 Mileage: in miles<br>
 Condition: 0 - Poor, 1 - OK, 2 - Good, 3 - Great<br>
 Price: sale price
