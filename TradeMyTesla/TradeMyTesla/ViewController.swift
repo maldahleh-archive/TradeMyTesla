@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     let cars = Cars()
-    let formatter = NumberFormatter()
     
     // MARK: UI variables
     @IBOutlet weak var stackView: UIStackView!
@@ -27,23 +26,34 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setFormatterProperties()
         setStackSpacing()
+        calculateValue(self)
     }
 
     @IBAction func calculateValue(_ sender: Any) {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 0
+        
         let formattedMileage = formatter.string(for: mileage.value) ?? "0"
         mileageLabel.text = "MILEAGE (\(formattedMileage) miles)"
         
+        let modelValue = Double(model.selectedSegmentIndex)
+        let premiumValue = Double(upgrades.selectedSegmentIndex)
+        let mileageValue = Double(mileage.value)
+        let conditionValue = Double(condition.selectedSegmentIndex)
         
+        if let prediction = try? cars.prediction(model: modelValue, premium: premiumValue, mileage: mileageValue, condition: conditionValue) {
+            let clampedValuation = max(2000, prediction.price)
+            
+            formatter.numberStyle = .currency
+            valuation.text = formatter.string(for: clampedValuation)
+        } else {
+            valuation.text = "Error"
+        }
     }
     
     // MARK: Helper methods
-    func setFormatterProperties() {
-        formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 0
-    }
-    
     func setStackSpacing() {
         stackView.setCustomSpacing(30, after: model)
         stackView.setCustomSpacing(30, after: upgrades)
