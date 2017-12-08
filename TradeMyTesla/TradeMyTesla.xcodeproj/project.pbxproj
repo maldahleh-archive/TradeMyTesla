@@ -12,6 +12,7 @@
 		4A07CA891FDA4EE800C4D5F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A07CA871FDA4EE800C4D5F4 /* Main.storyboard */; };
 		4A07CA8B1FDA4EE800C4D5F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A07CA8A1FDA4EE800C4D5F4 /* Assets.xcassets */; };
 		4A07CA8E1FDA4EE800C4D5F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A07CA8C1FDA4EE800C4D5F4 /* LaunchScreen.storyboard */; };
+		4A07CA961FDA4F8E00C4D5F4 /* Cars.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4A07CA951FDA4F8E00C4D5F4 /* Cars.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4A07CA8A1FDA4EE800C4D5F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A07CA8D1FDA4EE800C4D5F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A07CA8F1FDA4EE800C4D5F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A07CA951FDA4F8E00C4D5F4 /* Cars.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Cars.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		4A07CA821FDA4EE800C4D5F4 /* TradeMyTesla */ = {
 			isa = PBXGroup;
 			children = (
+				4A07CA971FDA4FA900C4D5F4 /* MLModel */,
 				4A07CA831FDA4EE800C4D5F4 /* AppDelegate.swift */,
 				4A07CA851FDA4EE800C4D5F4 /* ViewController.swift */,
 				4A07CA871FDA4EE800C4D5F4 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				4A07CA8F1FDA4EE800C4D5F4 /* Info.plist */,
 			);
 			path = TradeMyTesla;
+			sourceTree = "<group>";
+		};
+		4A07CA971FDA4FA900C4D5F4 /* MLModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A07CA951FDA4F8E00C4D5F4 /* Cars.mlmodel */,
+			);
+			path = MLModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			files = (
 				4A07CA861FDA4EE800C4D5F4 /* ViewController.swift in Sources */,
 				4A07CA841FDA4EE800C4D5F4 /* AppDelegate.swift in Sources */,
+				4A07CA961FDA4F8E00C4D5F4 /* Cars.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
