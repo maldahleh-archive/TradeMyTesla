@@ -2,6 +2,8 @@
 
 Trade My Tesla is an iOS 11 application designed to demonstrate Apple's new CoreML framework.
 
+Project from Paul Hudson's iOS book
+
 ## Data
 
 The goal of the project is to demonstrate CoreML, the included data is fictional and has no basis on real-world data.
